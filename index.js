@@ -13,7 +13,6 @@ app.use(cors());
 app.use(bodyParser.json());
 dotenv.config();
 
-const port = process.env.PORT;
 const uri = process.env.DATABASE_URL;
 
 app.get("/", (req, res) => {
@@ -28,8 +27,8 @@ mongoose
   .connect(uri)
   .then(() => {
     console.log("App connected to database");
-    app.listen(port, () => {
-      console.log(`App is listening to port: ${port}`);
+    app.listen(5555, () => {
+      console.log(`App is listening to port: 5555`);
     });
   })
   .catch((error) => {
